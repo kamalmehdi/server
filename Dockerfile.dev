@@ -1,0 +1,11 @@
+# Utilisez une image Java de base
+FROM openjdk:11
+
+# Copiez votre fichier jar ou compilez votre code source
+RUN mkdir -p /usr/lib/game/
+WORKDIR /usr/lib/game/
+
+COPY game.jar /usr/lib/game/game.jar
+
+# Commande pour exécuter votre application au démarrage du conteneur
+CMD ["java", "-jar", "/usr/lib/game/game.jar"]
